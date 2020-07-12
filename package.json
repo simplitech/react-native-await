@@ -23,6 +23,7 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint:fix": "yarn lint --fix",
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
@@ -34,13 +35,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/ftgibran/simpli-react-native-await",
+  "repository": "https://github.com/simplitech/react-native-await",
   "author": "Felipe Gibran Eleuterio Toledo <ft.gibran@gmail.com> (https://github.com/ftgibran)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ftgibran/simpli-react-native-await/issues"
+    "url": "https://github.com/simplitech/react-native-await/issues"
   },
-  "homepage": "https://github.com/ftgibran/simpli-react-native-await#readme",
+  "homepage": "https://github.com/simplitech/react-native-await#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/bob": "^0.16.2",
@@ -111,9 +112,11 @@
         "error",
         {
           "quoteProps": "consistent",
+          "semi": false,
           "singleQuote": true,
           "tabWidth": 2,
           "trailingComma": "es5",
+          "bracketSpacing": false,
           "useTabs": false
         }
       ]

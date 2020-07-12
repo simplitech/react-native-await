@@ -1,19 +1,26 @@
-import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import ReactNativeAwait from '@simpli/react-native-await';
+import React from 'react'
+import {AwaitActivity, Await} from '@simpli/react-native-await'
+import {StyleSheet, View, Text, Button} from 'react-native'
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const fakeRequest = () => new Promise((resolve) => setTimeout(resolve, 3000))
 
-  React.useEffect(() => {
-    ReactNativeAwait.multiply(3, 7).then(setResult);
-  }, []);
+  const populate = async () => {
+    // Loading starts here
+    await Await.run('myRequestName', fakeRequest)
+    // Loading ends after 3 seconds
+  }
+
+  populate()
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <AwaitActivity name={'myRequestName'}>
+        <Text>To be shown after loading</Text>
+        <Button title={'Try Again'} onPress={populate} />
+      </AwaitActivity>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -22,4 +29,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
