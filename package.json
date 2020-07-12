@@ -1,6 +1,6 @@
 {
   "name": "@simpli/react-native-await",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Easy-to-use loading indicator",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
