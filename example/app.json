@@ -1,0 +1,22 @@
+{
+  "name": "@simpli/react-native-await-example",
+  "displayName": "ReactNativeAwait Example",
+  "expo": {
+    "name": "@simpli/react-native-await-example",
+    "slug": "simpli-react-native-await-example",
+    "description": "Example app for @simpli/react-native-await",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
