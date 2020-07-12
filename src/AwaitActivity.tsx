@@ -20,7 +20,7 @@ const AwaitActivity: React.FC<Props> = (props) => {
   const [state, setState] = useState<AwaitState>(AwaitState.DEFAULT)
 
   useEffect(() => {
-    const await = props.awaitInstance ?? defaultAwaitInstance
+    const Await = props.awaitInstance ?? defaultAwaitInstance
 
     const toggleEvent = (
       name?: string,
@@ -44,18 +44,18 @@ const AwaitActivity: React.FC<Props> = (props) => {
     }
 
     const inAction = () => {
-      return Boolean(props.name && await.inAction(props.name))
+      return Boolean(props.name && Await.inAction(props.name))
     }
 
     if (inAction()) {
       setState(AwaitState.LOADING)
     }
 
-    await.event.on('toggle', toggleEvent)
+    Await.event.on('toggle', toggleEvent)
 
     return () => {
       // Remove current listener when this component unmount
-      await.event.off('toggle', toggleEvent)
+      Await.event.off('toggle', toggleEvent)
     }
   }, [props])
 
